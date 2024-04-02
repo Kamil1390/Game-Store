@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- Page info section -->
+<section
+  class="page-info-section set-bg"
+  data-setbg="{% static 'main_app/img/page-top-bg/4.jpg' %}"
+>
+  <div class="pi-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 text-white">
+          <h2>Купить {{data_from_db.title}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page info section -->
+
+<!-- Page section -->
+<section
+  class="page-section community-page set-bg photo-specific"
+
+>
+  <div class="community-warp_ spad">
+    <div class="container">
+      <ul class="community-post-list">
+        <li>
+          <div class="community-post">
+            <div class="post-content_">
+              <h5>{{data_from_db.title}}</h5>
+                <div class="attachment-file_">
+                  <img src="{% static data_from_db.path_to_img %}" alt="load {{data_from_db.path_to_img}}" />
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+<!-- Page section end -->
+
+{% endblock %}
