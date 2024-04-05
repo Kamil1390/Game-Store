@@ -12,7 +12,11 @@ def index(request: HttpRequest) -> HttpResponse:
 
 def catalog(request: HttpRequest) -> HttpResponse:
     data_from_db = Games.objects.filter(price__gt=0).order_by("title")
+    for item in data_from_db:
+        if item.discount_percent:
+            item.discount_percent = item.price - int((item.discount_percent / 100 * item.price))
     data = {'data_from_db': data_from_db}
+
     return render(request, "main_app/catalog.html", context=data)
 
 

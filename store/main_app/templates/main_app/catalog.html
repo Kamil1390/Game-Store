@@ -23,41 +23,56 @@
 
 <!-- Page section -->
 <section class="page-section review-page">
+  <!-- <div class="container row blocks">
+    <div class="quarter optionsBlock">
+      <div class="block"></div>
+    </div> -->
   <div class="community-warp spad">
+    <!-- <div class="container"> -->
     <div class="container">
-      <div class="container">
-
-        <div class="row">
-          {% for item in data_from_db %}
-            <div class="col-md-6">
-              <div class="review-item">
-                <div
-                  class="review-cover set-bg"
-                  data-setbg="{% static item.path_to_img %}"
-                >
-                  {% if item.rating < 8.5 %}
-                    <div class="score yellow">{{item.rating}}</div>
-                  {% elif item.rating < 9 %}
-                    <div class="score pink">{{item.rating}}</div>
-                  {% elif item.rating < 9.5 %}
-                    <div class="score green">{{item.rating}}</div>
-                  {% else %}
-                    <div class="score purple">{{item.rating}}</div>
-                  {% endif %}
-                </div>
-                <div class="review-text">
-                  <h4>{{item.title}}</h4>
-                  <div class="review-text_price"><h5 class="review-text_price_old">{{item.price}} p.</h5 ><h5 class="review-text_price_new"S>{{item.price}} p.</h5></div>
-
-                </div>
-                <a href="" class="review_buy">buy</a>
-              </div>
+      <div class="row">
+        {% for item in data_from_db %}
+        <div class="col-md-6">
+          <div class="review-item">
+            <div
+              class="review-cover set-bg"
+              data-setbg="{% static item.path_to_img %}"
+            >
+              {% if item.rating < 8.5 %}
+              <div class="score yellow">{{item.rating}}</div>
+              {% elif item.rating < 9 %}
+              <div class="score pink">{{item.rating}}</div>
+              {% elif item.rating < 9.5 %}
+              <div class="score green">{{item.rating}}</div>
+              {% else %}
+              <div class="score purple">{{item.rating}}</div>
+              {% endif %}
             </div>
-          {% endfor %}
+            <div class="review-text">
+              <h4>{{item.title}}</h4>
+              {% if item.discount_percent %}
+              <div class="review-text_price">
+                <h5 class="review-text_price_old">{{item.price}} p.</h5>
+                <h5 class="review-text_price_new" S>
+                  {{ item.discount_percent }} p.
+                </h5>
+              </div>
+              {% else %}
+              <div class="review-text_price">
+                <h5 class="review-text_price">{{item.price}} p.</h5>
+              </div>
+              {% endif %}
+              <!--                  <div class="review-text_price"><h5 class="review-text_price_old">{{item.price}} p.</h5 ><h5 class="review-text_price_new"S>{{item.price}} p.</h5></div>-->
+            </div>
+            <a href="" class="review_buy">Купить</a>
+          </div>
         </div>
+        {% endfor %}
       </div>
     </div>
+    <!-- </div> -->
   </div>
+  <!-- </div> -->
 </section>
 <!-- Page section end -->
 {% endblock %}
