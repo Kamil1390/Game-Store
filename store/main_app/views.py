@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponse, HttpRequest
 from django.db import models
-from .models import Games, Info
+from .models import Games, Info, Genre
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -15,18 +15,28 @@ def catalog(request: HttpRequest) -> HttpResponse:
     for item in data_from_db:
         if item.discount_percent:
             item.discount_percent = item.price - int((item.discount_percent / 100 * item.price))
-    data = {'data_from_db': data_from_db}
+    genre_db = Genre.objects.all()
+    data = {'data_from_db': data_from_db, 'genre_db': genre_db, 'genre_selected': 0}
 
     return render(request, "main_app/catalog.html", context=data)
-
-
-def show_game(request: HttpRequest, game_slug: models.SlugField) -> HttpResponse:
-    data_from_db = get_object_or_404(Games, slug=game_slug)
-    data = {'data_from_db': data_from_db}
-    return render(request, "main_app/post.html", context=data)
 
 
 def info(request: HttpRequest) -> HttpResponse:
     data_from_db = Info.objects.all()
     data = {'data_from_db': data_from_db}
     return render(request, "main_app/info_buy.html", context=data)
+
+
+def show_game(request: HttpRequest, game_slug: models.SlugField) -> HttpResponse:
+    data_from_db = get_object_or_404(Games, slug=game_slug)
+    data = {'data_from_db': data_from_db}
+    return render(request, "main_app/game.html", context=data)
+
+
+# def show_genre(request: HttpRequest, genre_slug: models.SlugField) -> HttpResponse:
+#     data_from_db = get_object_or_404(Games, slug=genre_slug)
+#     data = {'data_from_db': data_from_db}
+#     return render(request, "main_app/game.html", context=data)
+
+
+

@@ -2,13 +2,6 @@
 {% load static %}
 
 {% block content %}
-<!-- Page Preloder -->
-    <div id="preloder">
-      <div class="loader"></div>
-    </div>
-
-
-
     <!-- Hero section -->
     <section class="hero-section">
       <div class="hero-slider owl-carousel">
@@ -56,7 +49,7 @@
               <div class="col-lg-4 col-md-6">
                 <div class="recent-game-item">
                   <div class="rgi-thumb set-bg" data-setbg="{% static item.path_to_mini_img %}">
-                    <div class="cata new">{{ item.genre }}</div>
+                    <div class="cata new">{{ item.genre.name }}</div>
                   </div>
                   <div class="rgi-content">
                     <h5>{{ item.title }}</h5>
@@ -135,7 +128,7 @@
                     {% endif %}
                   </div>
                   <div class="review-text">
-                    <h5 class="size">{{ item.title }}</h5>
+                    <h5 class="size"><a href="{% url 'game' item.slug %}">{{ item.title }}</a></h5>
                   </div>
                 </div>
               </div>

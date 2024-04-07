@@ -7,7 +7,7 @@ class Games(models.Model):
     path_to_img = models.CharField(max_length=100, blank=True)
     rating = models.FloatField(default=0.0)
     is_tournament = models.BooleanField(default=False)
-    genre = models.CharField(max_length=15, default="action")
+    genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT)
     discount_percent = models.FloatField(default=0.0)
     path_to_mini_img = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
@@ -15,6 +15,15 @@ class Games(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Genre(models.Model):
+    name = models.CharField(max_length=15, default="action")
+    analog_name = models.CharField(max_length=15, default="Шутеры")
+    slug = models.SlugField(unique=True, max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
 class Info(models.Model):

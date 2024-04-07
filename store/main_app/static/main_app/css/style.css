@@ -1167,6 +1167,56 @@ ol {
   background-position: center top;
 }
 
+.review-text a {
+  font-size: 20px;
+  color: black;
+}
+
+/*------------------
+--------------------*/
+.table-content {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
+.left-chapters {
+  margin: 0;
+  background: #eee;
+  border-right: 1px solid #ccc;
+}
+.left-chapters ul {
+  width: 230px;
+  margin: 0;
+  padding: 20px 10px 10px 50px;
+  list-style: none;
+  font-size: 20px;
+}
+.left-chapters ul li {
+  margin: 30px 0 0 0;
+  color: #999;
+}
+.left-chapters ul li.selected {
+  color: #0059b2;
+}
+.left-chapters ul li a {
+  color: #444;
+  text-decoration: none;
+}
+.left-chapters ul li a:hover {
+  color: #cc0000;
+}
+/* .left-chapters ul li.share {margin: 60px 0 0 0;}
+.left-chapters ul li.share p {margin: 30px 0 30px 0;}
+.left-chapters ul li.share a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0 20px 0 0;
+} */
+/*------------------
+--------------------*/
+
 /*-----------------
   Community page
 --------------------*/
@@ -1175,8 +1225,8 @@ ol {
   margin-top: 300px;
   margin-left: 35px;
   height: 700px;
-  width: 400px;
-  background: rgba(0, 0, 0, 0.16);
+  width: 300px;
+  background: #eee;
   border: 1px solid #ccc; /* границы */
   border-radius: 5px; /* скругление углов */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1408,6 +1458,18 @@ ol {
     padding-left: 0;
     padding-top: 20px;
   }
+
+  .block_1 {
+    margin-left: 30px;
+    padding-left: 30px;
+  }
+
+  .block_1.genre-text {
+    margin-left: 30px;
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+
   .review-section {
     background-position: left top;
   }
