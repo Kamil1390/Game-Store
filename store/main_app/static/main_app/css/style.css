@@ -1206,14 +1206,7 @@ ol {
 .left-chapters ul li a:hover {
   color: #cc0000;
 }
-/* .left-chapters ul li.share {margin: 60px 0 0 0;}
-.left-chapters ul li.share p {margin: 30px 0 30px 0;}
-.left-chapters ul li.share a {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	margin: 0 20px 0 0;
-} */
+
 /*------------------
 --------------------*/
 
@@ -1245,7 +1238,7 @@ ol {
 }
 
 .community-warp_ {
-  max-width: 1367px;
+  width: 1200px;
   margin: 0 auto;
   margin-left: 20px;
   background: rgba(0, 0, 0, 0.16);

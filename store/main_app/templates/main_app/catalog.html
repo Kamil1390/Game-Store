@@ -33,7 +33,7 @@
               {% if genre_selected == 0 or genre_selected is None %}
               <li class="selected">Все жанры</li>
               {% else %}
-              <li><a href="{% url 'home' %}">Все категории </a></li>
+              <li><a href="{% url 'catalog' %}">Все жанры </a></li>
               {% endif %}
               {% for genre in genre_db %}
               {% if genre.id == genre_selected %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Games(models.Model):
@@ -7,7 +8,7 @@ class Games(models.Model):
     path_to_img = models.CharField(max_length=100, blank=True)
     rating = models.FloatField(default=0.0)
     is_tournament = models.BooleanField(default=False)
-    genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT)
+    genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT, related_name="cats")
     discount_percent = models.FloatField(default=0.0)
     path_to_mini_img = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
@@ -24,6 +25,9 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('genre', kwargs={'genre_slug': self.slug})
 
 
 class Info(models.Model):
