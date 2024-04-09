@@ -1,0 +1,16 @@
+{% load static %}
+{% for item in data_from_db %}
+<li>
+  <div class="community-post">
+    <div class="post-content_">
+      <h5>ШАГ {{item.pk}}: {{item.title}}</h5>
+      <div class="attachment-file">
+        <img
+          src="{% static item.path_to_img %}"
+          alt="load {{item.path_to_img}}"
+        />
+      </div>
+    </div>
+  </div>
+</li>
+{% endfor %}

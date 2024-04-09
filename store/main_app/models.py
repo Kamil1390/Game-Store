@@ -22,6 +22,9 @@ class Games(models.Model):
             discount = self.discount_percent / 100 * self.price
             return int(self.price - discount)
 
+    def get_absolute_url(self):
+        return reverse('game', kwargs={'game_slug': self.slug})
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=15, default="action")
@@ -41,3 +44,15 @@ class Info(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Cover(models.Model):
+    title = models.TextField()
+    description = models.TextField()
+    path_to_img = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+    def title_list(self):
+        return self.title.split()

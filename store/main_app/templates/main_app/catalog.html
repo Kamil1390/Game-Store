@@ -1,26 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% load main_app_tags %}
 {% block content %}
 
-
 <!-- Page info section -->
-<section
-  class="page-info-section set-bg"
-  data-setbg="{% static 'main_app/img/page-top-bg/3.jpg' %}"
->
-  <div class="pi-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-5 col-lg-6 text-white">
-          <h2>Каталог Игр</h2></span>
-          <p>
-            За каждую покупку Вам начисляется бонус, который в последующем можно
-            потратить на новые покупки.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% show_cover cover %}
 <!-- Page info section -->
 
 <!-- Page section -->
@@ -38,7 +20,6 @@
         </table>
       </div>
     </div>
-
     <div class="community-warp_ spad">
       <div class="container">
         <div class="row">

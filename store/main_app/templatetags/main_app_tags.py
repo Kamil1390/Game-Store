@@ -14,3 +14,28 @@ def show_category(genre_selected):
 @register.inclusion_tag('main_app/list_games.html')
 def show_games(data_from_db):
     return {'data_from_db': data_from_db}
+
+
+@register.inclusion_tag('main_app/cover_page.html')
+def show_cover(data):
+    return {'data': data}
+
+
+@register.inclusion_tag('main_app/list_info.html')
+def show_info(data_from_db):
+    return {'data_from_db': data_from_db}
+
+
+@register.inclusion_tag('main_app/list_news.html')
+def show_news(data_from_db):
+    return {'data_from_db': data_from_db}
+
+
+@register.inclusion_tag('main_app/list_tournaments.html')
+def show_tournaments(data_from_db):
+    return {'data_from_db': data_from_db}
+
+
+@register.inclusion_tag('main_app/list_sales.html')
+def show_sales(data_from_db):
+    return {'sale': data_from_db}

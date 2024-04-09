@@ -1,28 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load main_app_tags %}
 
+{% block content %}
 <!-- Page info section -->
-<section
-  class="page-info-section set-bg"
-  data-setbg="{% static 'main_app/img/page-top-bg/4.jpg' %}"
->
-  <div class="pi-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-5 col-lg-6 text-white">
-          <h2>Как купить?</h2>
-          <p>
-            Покупка игры в нашем магазине подразумевает, что вы приобретаете
-            лицензионный ключ, который позволит абсолютно легально скачать
-            оригинал игры и установить ее на ваш компьютер. Ключ от игры
-            приходит на указанный вами e-mail — это обеспечивает мгновенную
-            доставку и не требует многочасового ожидания курьера, что позволяет
-            начать играть практический сразу после приобретения игры.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% show_cover cover %}
 <!-- Page info section -->
 
 <!-- Page section -->
@@ -34,22 +14,23 @@
     <div class="container">
       <ul class="community-post-list">
         {% for item in data_from_db %}
-          <li>
-            <div class="community-post">
-              <div class="post-content_">
-                <h5>ШАГ {{item.pk}}: {{item.title}}</h5>
-                <div class="attachment-file">
-                  <img src="{% static item.path_to_img %}" alt="load {{item.path_to_img}}" />
-                </div>
+        <li>
+          <div class="community-post">
+            <div class="post-content_">
+              <h5>ШАГ {{item.pk}}: {{item.title}}</h5>
+              <div class="attachment-file">
+                <img
+                  src="{% static item.path_to_img %}"
+                  alt="load {{item.path_to_img}}"
+                />
               </div>
             </div>
-          </li>
+          </div>
+        </li>
         {% endfor %}
       </ul>
     </div>
   </div>
-
 </section>
 <!-- Page section end -->
-
 {% endblock %}
