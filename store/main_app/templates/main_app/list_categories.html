@@ -1,0 +1,18 @@
+{% if genre_selected is None %}
+  <li class="selected">Все жанры</li>
+{% else %}
+  <li><a href="{% url 'catalog' %}">Все жанры </a></li>
+{% endif %}
+{% for genre in genre_db %} {% if genre.slug == genre_selected %}
+  <li class="selected">{{ genre.analog_name }}</li>
+{% else %}
+  <li>
+    <a href="{{ genre.get_absolute_url }}">{{ genre.analog_name }}</a>
+  </li>
+{% endif %}
+{% endfor %}
+{% if genre_selected == 0 %}
+  <li class="sale">Распродажа</li>
+{% else %}
+  <li><a href="{% url 'sale' %}" class="sale">Распродажа</a></li>
+{% endif %}

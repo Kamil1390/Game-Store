@@ -1190,11 +1190,10 @@ ol {
   margin: 0;
   padding: 20px 10px 10px 50px;
   list-style: none;
-  font-size: 20px;
+  font-size: 21px;
 }
 .left-chapters ul li {
   margin: 30px 0 0 0;
-  color: #999;
 }
 .left-chapters ul li.selected {
   color: #0059b2;
@@ -1205,6 +1204,17 @@ ol {
 }
 .left-chapters ul li a:hover {
   color: #cc0000;
+}
+
+.left-chapters ul li.sale {
+  font-weight: bold;
+  color: red;
+}
+
+.left-chapters ul li a.sale{
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
 }
 
 /*------------------

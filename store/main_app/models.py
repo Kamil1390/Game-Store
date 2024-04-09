@@ -17,6 +17,11 @@ class Games(models.Model):
     def __str__(self):
         return self.title
 
+    def discount_price(self):
+        if self.discount_percent:
+            discount = self.discount_percent / 100 * self.price
+            return int(self.price - discount)
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=15, default="action")

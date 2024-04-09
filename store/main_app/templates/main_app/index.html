@@ -112,8 +112,7 @@
           <h2>Выгодные предложения</h2>
         </div>
         <div class="row">
-          {% for item in data_from_db %}
-            {% if item.discount_percent %}
+          {% for item in sale %}
               <div class="col-lg-3 col-md-6">
                 <div class="review-item">
                   <div class="review-cover set-bg" data-setbg="{% static item.path_to_mini_img %}">
@@ -132,7 +131,6 @@
                   </div>
                 </div>
               </div>
-            {% endif %}
           {% endfor %}
         </div>
       </div>
