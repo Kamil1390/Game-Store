@@ -1,0 +1,15 @@
+{%  load static %}
+{% for item in cover %}
+<div class="hs-item set-bg" data-setbg="{% static item.path_to_img %}">
+  <div class="hs-text">
+    <div class="container">
+      <h2>{{ item.title_list|first}} <span>{{ item.title_list|last}}</span></h2>
+      <p>
+        {% autoescape off %}
+        {{ item.description }}
+        {% endautoescape %}
+      </p>
+    </div>
+  </div>
+</div>
+{% endfor %}

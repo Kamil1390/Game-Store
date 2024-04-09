@@ -5,6 +5,11 @@ from main_app.models import Genre
 register = template.Library()
 
 
+@register.inclusion_tag('main_app/list_main_cover.html')
+def show_main_cover(data_from_db):
+    return {'cover': data_from_db}
+
+
 @register.inclusion_tag('main_app/list_categories.html')
 def show_category(genre_selected):
     genre_db = Genre.objects.all()
