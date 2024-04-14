@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!-- Page info section -->
 <section
@@ -19,27 +18,130 @@
 <!-- Page info section -->
 
 <!-- Page section -->
-<section
-  class="page-section community-page set-bg photo-specific"
-
->
-  <div class="community-warp spad">
+<section class="page-section community-page set-bg photo-specific">
+  <div class="community-warp_2 spad_">
     <div class="container">
-      <ul class="community-post-list">
+      <div class="community-post-list_">
         <li>
           <div class="community-post">
             <div class="post-content_">
-              <h5>{{data_from_db.title}}</h5>
+              <div class="row">
                 <div class="attachment-file_">
-                  <img src="{% static data_from_db.path_to_img %}" alt="load {{data_from_db.path_to_img}}" />
+                  <img
+                    src="{% static data_from_db.path_to_img %}"
+                    alt="load {{data_from_db.path_to_img}}"
+                  />
+                </div>
+                <div class="col-6">
+                  <div class="sub-block">
+                    <hr>
+                      <span>Издатель:</span><span_2>Capcom</span_2>
+                    <hr>
+                      <span>Разработчик:</span>
+                    <hr>
+                      <span>Жанр:</span>
+                    <hr>
+                      <span>Дата выхода игры:</span>
+                    <hr>
+                      <span>Локализация:</span>
+                    <hr>
+                      <span>Система активации:</span>
+                    <hr>
+                      <span>Возрастной рейтинг:</span>
+                    <hr>
+                  </div>
                 </div>
               </div>
             </div>
-          </li>
-      </ul>
+          </div>
+        </li>
+      </div>
+    </div>
+    <div class="container">
+      <div class="community-post-list_">
+        <div class="des-block">
+            <h4>Описание игры</h4>
+          </div>
+        <!-- <li> -->
+<!--          <hr class="full-width-line">-->
+          <div class="community-post">
+            <p>Millennia — Создайте свою страну в Millennia, исторической пошаговой игре жанра 4X, которая испытает ваше стратегическое мышление.
+            </br>У вас будет 10 000 лет, чтобы провести свой народ от зари человечества в далекое будущее.
+              Направляйте историю в нужное</br>
+              вам русло и проживайте новые варианты развития событий в каждом прохождении.
+            </p>
+          </div>
+        <!-- </li> -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="community-post-list_">
+        <div class="des-block">
+            <h4>Особенности игры</h4>
+          </div>
+        <li>
+<!--          <hr class="full-width-line">-->
+          <div class="community-post">
+            <p>
+              Проведите свою страну сквозь тернии истории — Вершите историю всего мира на протяжении десяти эпох, от первых городов </br>
+              до космических странствий. Если вы выполните определенные условия, то окажетесь в эпохе перемен — альтернативном варианте истории с новыми правилами, новыми технологиями и новыми юнитами. Но будьте осторожны — путь хаоса и беспорядка может привести вас в эпоху кризиса, и мир обрушится в бездну войны, болезни или невежества. С другой стороны, мудрый правитель всегда сможет извлечь выгоду из кризиса...
+              </br></br>
+              Выберите характер своей нации — Создайте уникальный характер своей страны из различных национальных особенностей.
+              </br></br>
+              Освойте глубокую экономику — Управляйте своей экономикой и создайте настоящий локомотив роста и строительства.
+              </br></br>
+              Открывайте технологии и идеи — Стремитесь к знаниям и проводите культурные и научные исследования, чтобы открывать новых юнитов, здания и улучшения для роста ваших городов и усиления ваших армий.
+              </br></br>
+              Добейтесь победы на своих условиях — Добейтесь абсолютного успеха в победной эпохе. Ближе к концу игры (или раньше,
+              </br>
+              если вы выбрали верную стратегию) господство в мире позволяет стране диктовать условия победы.
+            </p>
+          </div>
+        </li>
+      </div>
+    </div>
+    <div class="container">
+      <div class="community-post-list_">
+        <div class="des-block">
+            <h4>Что я приобретаю</h4>
+          </div>
+        <li>
+<!--          <hr class="full-width-line">-->
+          <div class="community-post">
+            <p>
+              Чтобы купить ключ Millennia для PC, вам понадобится всего несколько минут. После оплаты вы получите на e-mail
+              </br>
+              лицензионный ключ для системы Steam. Сразу после его активации игра автоматически скачается и установится на ваш компьютер.
+            </p>
+          </div>
+        </li>
+      </div>
+    </div>
+    <div class="container">
+      <div class="community-post-list_">
+        <div class="des-block">
+            <h4>Системные требования</h4>
+        </div>
+<!--        <li>-->
+<!--          <hr class="full-width-line">-->
+          <div class="community-post">
+            <div class="sub-block">
+              <h6>Минимальные системные требования</h6>
+              <ul>
+                <li><span>Издатель:</span><span_2>Capcom</span_2></li>
+                <li><span>Разработчик:</span><span_2>Capcom</span_2></li>
+                <li><span>Жанр:</span><span_2>Capcom</span_2></li>
+                <li><span>Дата выхода игры:</span><span_2>Capcom</span_2></li>
+                <li><span>Локализация:</span><span_2>Capcom</span_2></li>
+                <li><span>Система активации:</span><span_2>Capcom</span_2></li>
+                <li><span>Возрастной рейтинг:</span><span_2>Capcom</span_2></li>
+              </ul>
+            </div>
+          </div>
+<!--        </li>-->
+      </div>
     </div>
   </div>
 </section>
 <!-- Page section end -->
-
 {% endblock %}

@@ -82,6 +82,30 @@ ol {
   margin: 0;
 }
 
+span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+span_2 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 150px;
+}
+
+.community-post .sub-block ul li {
+  margin-bottom: 5px;
+}
+
+.full-width-line {
+  width: 100%;
+  border: 0;
+  height: 1px; /* Высота полосы */
+  background-color: black; /* Цвет полосы */
+}
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -108,6 +132,11 @@ ol {
 
 .spad {
   padding-top: 97px;
+  padding-bottom: 97px;
+}
+
+.spad_ {
+  padding-top: 50px;
   padding-bottom: 97px;
 }
 
@@ -1211,7 +1240,7 @@ ol {
   color: red;
 }
 
-.left-chapters ul li a.sale{
+.left-chapters ul li a.sale {
   font-weight: bold;
   color: red;
   text-decoration: none;
@@ -1223,6 +1252,15 @@ ol {
 /*-----------------
   Community page
 --------------------*/
+.community-post .sub-block h6 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.sub-block {
+  margin-left: 30px;
+}
 
 .block_1 {
   margin-top: 300px;
@@ -1254,6 +1292,13 @@ ol {
   background: rgba(0, 0, 0, 0.16);
 }
 
+.community-warp_2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* margin-left: 20px; */
+  background: rgba(0, 0, 0, 0.16);
+}
+
 .community-post-list {
   list-style: none;
 }
@@ -1266,6 +1311,36 @@ ol {
   background: #1f2225;
 }
 
+.community-post-list_ {
+  list-style: none;
+}
+
+.community-post-list_ {
+  padding: 0px 40px 0px;
+  justify-content: center; /* Расположить по горизонтали по центру */
+  /*height: 350px;*/
+}
+
+.community-post-list_ li {
+  /* padding-left: 25px; */
+  margin-bottom: 21px;
+  overflow: hidden;
+  border: 1px solid #878787;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.community-post-list_ h4 {
+  margin-left: 18px;
+  margin-top: 15px;
+}
+
+.community-post-list p {
+  margin-left: 18px;
+  margin-top: 15px;
+}
+
 .community-post-list .community-post .author-avator {
   width: 63px;
   height: 63px;
@@ -1273,8 +1348,38 @@ ol {
   float: left;
 }
 
+.des-block {
+  border-radius: 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+  padding-top: 1px;
+  height: 50px;
+  background-color: rgb(6, 6, 6);
+}
+
+.des-block h4 {
+  color: rgb(212, 158, 11);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
 .community-post-list .community-post .post-content {
   padding-left: 10px;
+}
+
+.community-post-list_ .community-post p {
+  font-size: 14px;
+  padding-left: 20px;
+  color: black;
+}
+
+.community-post-list_ .community-post .post-content_ {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  weight: 1000px;
+  height: 550px;
 }
 
 .community-post-list .community-post .post-content h5 {
@@ -1289,10 +1394,11 @@ ol {
   padding-left: 18px;
 }
 
-.community-post-list .community-post .post-content_ h5 {
+/*
+.community-post-list_ .community-post .post-content_ h5 {
   color: #ffb320;
-  /* padding-left: 0px; */
-}
+   padding-left: 0px;
+}*/
 
 .community-post-list .community-post .post-content p {
   color: #fff;
@@ -1312,12 +1418,13 @@ ol {
   max-width: 1000px;
 }
 
-.community-post-list .attachment-file_ {
+.community-post-list_ .attachment-file_ {
+  margin-left: 30px;
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #878787;
   /* /* background-position: center; */
-  padding-left: 0px;
-  padding-top: 15px;
-  width: 400px;
-  height: 250px;
 }
 
 .community-top-title {
