@@ -82,13 +82,18 @@ ol {
   margin: 0;
 }
 
-span {
+.my-block {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+.my-block span {
   font-family: "Times New Roman", Times, serif;
   font-size: 14px;
   margin-left: 5px;
 }
 
-span_2 {
+.my-block span_2 {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 14px;
@@ -97,6 +102,7 @@ span_2 {
 
 .community-post .sub-block ul li {
   margin-bottom: 5px;
+
 }
 
 .full-width-line {
@@ -1255,9 +1261,11 @@ span_2 {
 .community-post .sub-block h6 {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-  margin-top: 12px;
+  margin-top: 8px;
 }
-
+.community-post .sub-block ul {
+  margin-top: 8px;
+}
 .sub-block {
   margin-left: 30px;
 }
@@ -1321,7 +1329,7 @@ span_2 {
   /*height: 350px;*/
 }
 
-.community-post-list_ li {
+.community-post-list_ .my-block {
   /* padding-left: 25px; */
   margin-bottom: 21px;
   overflow: hidden;
@@ -1336,16 +1344,27 @@ span_2 {
   margin-top: 15px;
 }
 
+.community-post .sub-block {
+  padding-left: 0px;
+  padding-right: 30px;
+}
+
 .community-post-list p {
   margin-left: 18px;
   margin-top: 15px;
 }
 
-.community-post-list .community-post .author-avator {
-  width: 63px;
-  height: 63px;
-  border-radius: 50%;
-  float: left;
+.community-post-list_ .community-post ul li {
+  margin-top: 10px;
+  margin-button: 20px;
+  padding-button: 20px;
+}
+
+.community-post-list_ h4 li{
+  margin-left: 22px;
+  margin-top: 10px;
+  margin-button: 20px;
+  padding-button: 20px;
 }
 
 .des-block {
@@ -1372,6 +1391,7 @@ span_2 {
 .community-post-list_ .community-post p {
   font-size: 14px;
   padding-left: 20px;
+  padding-top: 8px;
   color: black;
 }
 
