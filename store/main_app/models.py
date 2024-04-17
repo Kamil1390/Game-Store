@@ -56,3 +56,10 @@ class Cover(models.Model):
 
     def title_list(self):
         return self.title.split()
+
+
+# class GameInfo(models.Model):
+#     path_to_img = models.CharField(max_length=100, blank=True)
+#     path_to_mini_img = models.CharField(max_length=100, blank=True)
+#     description = models.TextField(blank=True)
+

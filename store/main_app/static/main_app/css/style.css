@@ -102,7 +102,6 @@ ol {
 
 .community-post .sub-block ul li {
   margin-bottom: 5px;
-
 }
 
 .full-width-line {
@@ -160,7 +159,7 @@ ol {
 }
 
 .rating i {
-  color: #fbb710;
+  color: rgb(251, 183, 16);
 }
 
 .rating .is-fade {
@@ -1268,7 +1267,6 @@ ol {
   width: 500px;
   text-align: left;
   font-weight: bold;
-
 }
 
 .my-col-small {
@@ -1281,7 +1279,6 @@ ol {
   margin-left: 100px;
   text-align: center;
   font-weight: bold;
-
 }
 
 .community-post .sub-block h6 {
@@ -1309,15 +1306,48 @@ ol {
 }
 
 .block_2 {
-  margin-top: 300px;
-  margin-left:17px;
-  height: 700px;
+  position: relative;
+  margin-top: 60px;
+  /*margin-left: 0px;*/
+  height: 500px;
   width: 300px;
+  /*background-image: url("../img/icons/ticket_2.png");
+  background-size: cover;  Растягиваем фоновое изображение на весь блок
+  background-position: center;  Центрируем фоновое изображение */
+  /*position: fixed;*/
+  /*top: 10;
+  left: 82%;
+  /*transform: translateX(-50%);
+  transition: top 0.5s ease;  Добавляем плавную анимацию для свойства top */
+  /*position: static;
+  top: 20px;
+  animation: moveSlowly 5s infinite alternate;*/
+  /*top: 50px;  расстояние от верха страницы */
+  /*left: 1380px;  расстояние от левого края */
+  /*margin-bottom: 2000px; */
   background: #eee;
-  border: 1px solid #ccc; /* границы */
-  border-radius: 5px; /* скругление углов */
+  /*border: 1px solid #ccc;
+  border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
+  scroll-snap-align: start;*/
+}
+
+.fixed-block {
+  width: 300px;
+  height: 500px;
+  background-image: url("../img/icons/ticket_2.png");
+  background-size: cover;
+  background-position: center;
+  position: sticky;
+  top: 10;
+  left: 75%;
+  transform: translateX(0%);
+  transition: top 1s ease;
+}
+
+
+.content {
+  height: 200px; /* Пример высоты контента для демонстрации прокрутки */
 }
 
 .community-page .site-pagination {
@@ -1340,6 +1370,9 @@ ol {
 .my-row {
   display: flex;
   justify-content: center;
+}
+.absolute {
+  position: relative;
 }
 
 .community-warp_2 {
@@ -1404,7 +1437,7 @@ ol {
   padding-button: 20px;
 }
 
-.community-post-list_ h4 li{
+.community-post-list_ h4 li {
   margin-left: 22px;
   margin-top: 10px;
   margin-button: 20px;
