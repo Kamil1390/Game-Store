@@ -1258,6 +1258,32 @@ ol {
 /*-----------------
   Community page
 --------------------*/
+.my-col {
+  width: 250px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.my-col2 {
+  width: 500px;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.my-col-small {
+  width: 130px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.my-col2-small {
+  margin-left: 100px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
 .community-post .sub-block h6 {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
@@ -1273,6 +1299,18 @@ ol {
 .block_1 {
   margin-top: 300px;
   margin-left: 35px;
+  height: 700px;
+  width: 300px;
+  background: #eee;
+  border: 1px solid #ccc; /* границы */
+  border-radius: 5px; /* скругление углов */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.block_2 {
+  margin-top: 300px;
+  margin-left:17px;
   height: 700px;
   width: 300px;
   background: #eee;
@@ -1299,10 +1337,16 @@ ol {
   margin-left: 20px;
   background: rgba(0, 0, 0, 0.16);
 }
+.my-row {
+  display: flex;
+  justify-content: center;
+}
 
 .community-warp_2 {
   max-width: 1000px;
-  margin: 0 auto;
+  /*display: flex;  Используем Flexbox для контейнера */
+  /* justify-content: center; */
+  margin-left: auto;
   /* margin-left: 20px; */
   background: rgba(0, 0, 0, 0.16);
 }
