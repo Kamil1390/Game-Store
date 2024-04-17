@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponse, HttpRequest
 from django.db import models
-from .models import Games, Info, Genre, Cover
+from .models import Games, InfoBuy, Genre, Cover
 
 cover = Cover.objects.get(pk=3)
 
@@ -31,8 +31,8 @@ def show_sale(request: HttpRequest) -> HttpResponse:
     return render(request, "main_app/catalog.html", context=data)
 
 
-def info(request: HttpRequest) -> HttpResponse:
-    data_from_db = Info.objects.all()
+def info_buy(request: HttpRequest) -> HttpResponse:
+    data_from_db = InfoBuy.objects.all()
     data = {'data_from_db': data_from_db, 'cover': Cover.objects.get(pk=4)}
     return render(request, "main_app/info_buy.html", context=data)
 

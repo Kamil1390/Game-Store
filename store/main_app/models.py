@@ -38,7 +38,7 @@ class Genre(models.Model):
         return reverse('genre', kwargs={'genre_slug': self.slug})
 
 
-class Info(models.Model):
+class InfoBuy(models.Model):
     title = models.CharField(max_length=100)
     path_to_img = models.CharField(max_length=100)
 
