@@ -14,6 +14,7 @@ class Games(models.Model):
     path_to_mini_img = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, max_length=100, db_index=True)
+    # gameinfo = models.ForeignKey('')
 
     def __str__(self):
         return self.title
@@ -59,15 +60,15 @@ class Cover(models.Model):
         return self.title.split()
 
 
-# class GameInfo(models.Model):
-#     path_to_img = models.CharField(max_length=100, blank=True)
-#     path_to_mini_img = models.CharField(max_length=100, blank=True)
-#     description = models.TextField(blank=True)
-#     features = models.TextField(blank=True)
-#     date_release = models.DateField(default=timezone.now())
-#     publisher = models.CharField(blank=True, max_length=100)
-#     developer = models.CharField(blank=True, max_length=100)
-#     local = models.CharField(blank=True, max_length=100)
-#     system = models.CharField(blank=True, max_length=100)
-#     age_rating = models.CharField(blank=True, max_length=3)
+class GameInfo(models.Model):
+    path_to_img = models.CharField(max_length=100, blank=True)
+    path_to_mini_img = models.CharField(max_length=100, blank=True)
+    description = models.TextField(blank=True)
+    features = models.TextField(blank=True)
+    date_release = models.DateField(default=timezone.now)
+    publisher = models.CharField(blank=True, max_length=100)
+    developer = models.CharField(blank=True, max_length=100)
+    local = models.CharField(blank=True, max_length=100)
+    system = models.CharField(blank=True, max_length=100)
+    age_rating = models.CharField(blank=True, max_length=3)
 
