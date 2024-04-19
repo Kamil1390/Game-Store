@@ -1,12 +1,13 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 
 class Games(models.Model):
     title = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     path_to_img = models.CharField(max_length=100, blank=True)
-    rating = models.FloatField(default=0.0)
+    # rating = models.FloatField(default=0.0)
     is_tournament = models.BooleanField(default=False)
     genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT, related_name="cats")
     discount_percent = models.FloatField(default=0.0)
@@ -62,4 +63,11 @@ class Cover(models.Model):
 #     path_to_img = models.CharField(max_length=100, blank=True)
 #     path_to_mini_img = models.CharField(max_length=100, blank=True)
 #     description = models.TextField(blank=True)
+#     features = models.TextField(blank=True)
+#     date_release = models.DateField(default=timezone.now())
+#     publisher = models.CharField(blank=True, max_length=100)
+#     developer = models.CharField(blank=True, max_length=100)
+#     local = models.CharField(blank=True, max_length=100)
+#     system = models.CharField(blank=True, max_length=100)
+#     age_rating = models.CharField(blank=True, max_length=3)
 
