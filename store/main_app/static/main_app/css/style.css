@@ -145,6 +145,17 @@ ol {
   padding-bottom: 97px;
 }
 
+.community-warp_ .spad .container .row .col-md-6 {
+  border: 1px solid white; /* Рамка для контейнера */
+  padding: 20px; /* Добавляем отступы вокруг рамки */
+  transition: background-color 0.3s ease;
+}
+
+.community-warp_ .spad .container .row .col-md-6:hover {
+  background-color: white; /* Изменяем цвет фона при наведении */
+}
+
+
 .text-white h1,
 .text-white h2,
 .text-white h3,
@@ -582,6 +593,10 @@ ol {
 .recent-game-item .rgi-content .comment {
   font-size: 12px;
   color: #737373;
+}
+
+.rgi-content .review-text {
+  padding-bottom: 20px;
 }
 
 .recent-game-item .rgi-extra {
@@ -1446,19 +1461,33 @@ ol {
 
 .des-block {
   border-radius: 0px;
+  border-bottom: 2px solid rgb(212, 158, 11);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   padding-left: 10px;
   padding-top: 1px;
-  height: 50px;
+  height: 60px;
   background-color: rgb(6, 6, 6);
 }
 
 .des-block h4 {
-  color: rgb(212, 158, 11);
+  /*color: rgb(212, 158, 11);*/
+  color: white;
   font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin-left: 5px;
+}
+
+.des-block h2 {
+  /*color: rgb(212, 158, 11);*/
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  /*font-size: 25px;*/
+  font-weight: bold;
+  margin-left: 5px;
+}
+.community-warp_ .des-block {
+  padding-top: 8px;
 }
 
 .community-post-list .community-post .post-content {

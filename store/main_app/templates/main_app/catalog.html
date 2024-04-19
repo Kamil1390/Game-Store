@@ -7,6 +7,7 @@
 
 <!-- Page section -->
 <section class="page-section review-page">
+
   <div class="row">
     <div class="block_1">
       <div class="genre-text">
@@ -20,10 +21,15 @@
         </table>
       </div>
     </div>
-    <div class="community-warp_ spad">
-      <div class="container">
-        <div class="row">
-          {% show_games data_from_db %}
+    <div class="community-warp_">
+      <div class="des-block">
+        <h2>Каталог</h2>
+      </div>
+      <div class="spad">
+        <div class="container">
+          <div class="row">
+            {% show_games data_from_db %}
+          </div>
         </div>
       </div>
     </div>
