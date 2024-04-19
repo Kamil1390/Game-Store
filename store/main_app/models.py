@@ -14,7 +14,7 @@ class Games(models.Model):
     path_to_mini_img = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, max_length=100, db_index=True)
-    # gameinfo = models.ForeignKey('')
+    gameinfo = models.ForeignKey(to='GameInfo', on_delete=models.PROTECT, related_name="game")
 
     def __str__(self):
         return self.title
@@ -72,3 +72,5 @@ class GameInfo(models.Model):
     system = models.CharField(blank=True, max_length=100)
     age_rating = models.CharField(blank=True, max_length=3)
 
+    def __str__(self):
+        return self.path_to_img
