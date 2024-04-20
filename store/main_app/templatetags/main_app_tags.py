@@ -1,6 +1,6 @@
 from django import template
 import main_app.views as views
-from main_app.models import Genre
+from main_app.models import Genre, GameInfo
 
 register = template.Library()
 
@@ -44,3 +44,8 @@ def show_tournaments(data_from_db):
 @register.inclusion_tag('main_app/list_sales.html')
 def show_sales(data_from_db):
     return {'sale': data_from_db}
+
+
+@register.inclusion_tag('main_app/list_description.html')
+def show_description(data_from_db):
+    return {'data_from_db': data_from_db}

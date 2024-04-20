@@ -38,8 +38,9 @@ def info_buy(request: HttpRequest) -> HttpResponse:
 
 
 def show_game(request: HttpRequest, game_slug: models.SlugField) -> HttpResponse:
-    data_from_db = get_object_or_404(GameInfo, game__slug=game_slug)
-    data = {'data_from_db': data_from_db}
+    gameinfo_db = get_object_or_404(GameInfo, game__slug=game_slug)
+    games_db = get_object_or_404(Games, slug=game_slug)
+    data = {'gameinfo_db': gameinfo_db, 'games_db': games_db}
     return render(request, "main_app/game.html", context=data)
 
 

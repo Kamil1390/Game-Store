@@ -3,19 +3,9 @@
 <!-- Page info section -->
 <section
   class="page-info-section set-bg"
-  data-setbg="{% static data_from_db.path_to_img %}"
+  data-setbg="{% static gameinfo_db.path_to_img %}"
 >
-<!--  <div class="pi-content">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="col-xl-5 col-lg-6 text-white">-->
-<!--          <h2>Купить {{data_from_db.title}}</h2>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 </section>
-<!-- Page info section -->
 
 <!-- Page section -->
 <section class="page-section community-page set-bg photo-specific">
@@ -25,7 +15,7 @@
         <div class="container">
           <div class="community-post-list_">
             <div class="des-block">
-              <h4>Купить {{data_from_db.title}}</h4>
+              <h4>Купить {{games_db.title}}</h4>
             </div>
             <div class="my-block">
               <div class="community-post">
@@ -33,15 +23,15 @@
                   <div class="row">
                     <div class="attachment-file_">
                       <img
-                        src="{% static data_from_db.path_to_mini_img %}"
-                        alt="load {{data_from_db.path_to_img}}"
+                        src="{% static gameinfo_db.path_to_mini_img %}"
+                        alt="load {{gameinfo_db.path_to_img}}"
                       />
                     </div>
 
                     <div class="col-7">
                       <div class="sub-block">
                         <hr />
-                        {% for item1, item2 in data_from_db.list_columns|slice:"0:5" %}
+                        {% for item1, item2 in gameinfo_db.list_columns %}
                           <div class="container text-center">
                             <div class="row">
                               <div class="my-col-small">{{item1}}:</div>
@@ -66,7 +56,7 @@
             <div class="my-block">
               <div class="community-post">
                 <p>
-                  {{data_from_db.gameinfo.description}}
+                  {{gameinfo_db.description}}
                 </p>
               </div>
               <!-- </li> -->
@@ -82,7 +72,7 @@
               <div class="community-post">
                 <div class="sub-block">
                   <ul>
-                    {% for item in data_from_db.gameinfo.list_features %}
+                    {% for item in gameinfo_db.list_features %}
                       <li>{{ item }}</li>
                     {% endfor %}
                   </ul>
@@ -102,7 +92,7 @@
                   Чтобы купить ключ Millennia для PC, вам понадобится всего
                   несколько минут. После оплаты вы получите на e-mail
                   <br />
-                  лицензионный ключ для системы {{data_from_db.system}}. Сразу после его активации
+                  лицензионный ключ для системы {{gameinfo_db.system}}. Сразу после его активации
                   игра автоматически скачается и установится на ваш компьютер.
                 </p>
               </div>
