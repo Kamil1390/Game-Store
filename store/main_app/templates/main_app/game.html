@@ -33,64 +33,23 @@
                   <div class="row">
                     <div class="attachment-file_">
                       <img
-                        src="{% static data_from_db.gameinfo.path_to_mini_img %}"
+                        src="{% static data_from_db.path_to_mini_img %}"
                         alt="load {{data_from_db.path_to_img}}"
                       />
                     </div>
+
                     <div class="col-7">
                       <div class="sub-block">
                         <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Издатель:</div>
-                            <div class="my-col2-small">{{data_from_db.gameinfo.publisher}}</div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Разработчик:</div>
-                            <div class="my-col2-small">{{data_from_db.gameinfo.developer}}</div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Жанр:</div>
-                            <div class="my-col2-small">{{data_from_db.genre.name}}</div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Дата выхода игры:</div>
-                            <div class="my-col2-small">{{data_from_db.gameinfo.date_release}}</div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Локализация:</div>
-                            <div class="my-col2-small">
-                              {{data_from_db.gameinfo.local}}
+                        {% for item1, item2 in data_from_db.list_columns|slice:"0:5" %}
+                          <div class="container text-center">
+                            <div class="row">
+                              <div class="my-col-small">{{item1}}:</div>
+                              <div class="my-col2-small">{{item2}}</div>
                             </div>
                           </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Система активации::</div>
-                            <div class="my-col2-small">{{data_from_db.gameinfo.system}}</div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div class="container text-center">
-                          <div class="row">
-                            <div class="my-col-small">Возрастной рейтинг:</div>
-                            <div class="my-col2-small">{{data_from_db.gameinfo.age_rating}}</div>
-                          </div>
-                        </div>
-                        <hr />
+                          <hr />
+                        {% endfor %}
                       </div>
                     </div>
                   </div>
@@ -143,7 +102,7 @@
                   Чтобы купить ключ Millennia для PC, вам понадобится всего
                   несколько минут. После оплаты вы получите на e-mail
                   <br />
-                  лицензионный ключ для системы {{data_from_db.gameinfo.system}}. Сразу после его активации
+                  лицензионный ключ для системы {{data_from_db.system}}. Сразу после его активации
                   игра автоматически скачается и установится на ваш компьютер.
                 </p>
               </div>

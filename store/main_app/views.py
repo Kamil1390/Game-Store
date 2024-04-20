@@ -38,12 +38,7 @@ def info_buy(request: HttpRequest) -> HttpResponse:
 
 
 def show_game(request: HttpRequest, game_slug: models.SlugField) -> HttpResponse:
-    lst = [
-        "Издатель", "Разработчик", "Дата выхода игры",
-        "Локализация", "Система активации", "Возрастной рейтинг",
-    ]
     data_from_db = get_object_or_404(GameInfo, game__slug=game_slug)
-    # data_game = GameInfo.game.get
     data = {'data_from_db': data_from_db}
     return render(request, "main_app/game.html", context=data)
 

@@ -76,3 +76,13 @@ class GameInfo(models.Model):
 
     def list_features(self):
         return self.features.split('\n')
+
+    def list_columns(self):
+        lst = [
+            "Издатель", "Разработчик", "Дата выхода игры", "Жанр",
+            "Локализация", "Система активации", "Возрастной рейтинг",
+        ]
+        lst_settings = [getattr(self, field.name) for field in self._meta.fields]
+        gnr = self.game.get(pk=lst_settings[0])
+        lst_settings.insert(6, gnr.genre.analog_name)
+        return zip(lst, lst_settings[3:])
