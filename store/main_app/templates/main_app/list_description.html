@@ -1,0 +1,25 @@
+{% for item1, item2 in gameinfo_db.list_description %}
+  <div class="container">
+    <div class="community-post-list_">
+      <div class="des-block">
+        <h4>{{item1}}</h4>
+      </div>
+      <div class="my-block">
+        <div class="community-post">
+          {% if item1 == "Описание игры" %}
+            <p>{{item2}}</p>
+          {% else %}
+            <div class="sub-block">
+              <ul>
+                {% for sub_item in gameinfo_db.list_features %}
+                  <li>{{ sub_item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+

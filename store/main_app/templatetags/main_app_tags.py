@@ -47,5 +47,5 @@ def show_sales(data_from_db):
 
 
 @register.inclusion_tag('main_app/list_description.html')
-def show_description(data_from_db):
-    return {'data_from_db': data_from_db}
+def show_description(gameinfo_db):
+    return {'gameinfo_db': gameinfo_db}
