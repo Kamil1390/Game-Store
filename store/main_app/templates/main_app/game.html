@@ -3,7 +3,7 @@
 <!-- Page info section -->
 <section
   class="page-info-section set-bg"
-  data-setbg="{% static 'main_app/img/page-top-bg/4.jpg' %}"
+  data-setbg="{% static data_from_db.path_to_img %}"
 >
 <!--  <div class="pi-content">-->
 <!--    <div class="container">-->
@@ -33,7 +33,7 @@
                   <div class="row">
                     <div class="attachment-file_">
                       <img
-                        src="{% static data_from_db.path_to_img %}"
+                        src="{% static data_from_db.gameinfo.path_to_mini_img %}"
                         alt="load {{data_from_db.path_to_img}}"
                       />
                     </div>
@@ -43,28 +43,28 @@
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Издатель:</div>
-                            <div class="my-col2-small">Paradox Interactive</div>
+                            <div class="my-col2-small">{{data_from_db.gameinfo.publisher}}</div>
                           </div>
                         </div>
                         <hr />
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Разработчик:</div>
-                            <div class="my-col2-small">C Prompt Games</div>
+                            <div class="my-col2-small">{{data_from_db.gameinfo.developer}}</div>
                           </div>
                         </div>
                         <hr />
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Жанр:</div>
-                            <div class="my-col2-small">Стратегия</div>
+                            <div class="my-col2-small">{{data_from_db.genre.name}}</div>
                           </div>
                         </div>
                         <hr />
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Дата выхода игры:</div>
-                            <div class="my-col2-small">26 марта 2024</div>
+                            <div class="my-col2-small">{{data_from_db.gameinfo.date_release}}</div>
                           </div>
                         </div>
                         <hr />
@@ -72,7 +72,7 @@
                           <div class="row">
                             <div class="my-col-small">Локализация:</div>
                             <div class="my-col2-small">
-                              Интерфейс на русском
+                              {{data_from_db.gameinfo.local}}
                             </div>
                           </div>
                         </div>
@@ -80,14 +80,14 @@
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Система активации::</div>
-                            <div class="my-col2-small">Steam</div>
+                            <div class="my-col2-small">{{data_from_db.gameinfo.system}}</div>
                           </div>
                         </div>
                         <hr />
                         <div class="container text-center">
                           <div class="row">
                             <div class="my-col-small">Возрастной рейтинг:</div>
-                            <div class="my-col2-small">16+</div>
+                            <div class="my-col2-small">{{data_from_db.gameinfo.age_rating}}</div>
                           </div>
                         </div>
                         <hr />
@@ -107,13 +107,7 @@
             <div class="my-block">
               <div class="community-post">
                 <p>
-                  Millennia — Создайте свою страну в Millennia, исторической
-                  пошаговой игре жанра 4X, которая испытает ваше стратегическое
-                  мышление. <br />У вас будет 10 000 лет, чтобы провести свой
-                  народ от зари человечества в далекое будущее. Направляйте
-                  историю в нужное<br />
-                  вам русло и проживайте новые варианты развития событий в
-                  каждом прохождении.
+                  {{data_from_db.gameinfo.description}}
                 </p>
               </div>
               <!-- </li> -->
@@ -129,33 +123,9 @@
               <div class="community-post">
                 <div class="sub-block">
                   <ul>
-                    <li>
-                      Проведите свою страну сквозь тернии истории — Вершите
-                      историю всего мира на протяжении десяти эпох, от первых
-                      городов до<br />
-                      космических странствий.
-                    </li>
-                    <li>
-                      Выберите характер своей нации — Создайте уникальный
-                      характер своей страны из различных национальных
-                      особенностей.
-                    </li>
-                    <li>
-                      Освойте глубокую экономику — Управляйте своей экономикой и
-                      создайте настоящий локомотив роста и строительства.
-                    </li>
-                    <li>
-                      Открывайте технологии и идеи — Стремитесь к знаниям и
-                      проводите культурные и научные исследования, чтобы
-                      открывать новых юнитов, здания и улучшения для роста ваших
-                      городов и усиления ваших армий.
-                    </li>
-                    <li>
-                      Добейтесь победы на своих условиях — Добейтесь абсолютного
-                      успеха в победной эпохе. Ближе к концу игры (или раньше,
-                      если вы выбрали верную стратегию) господство в мире
-                      позволяет стране диктовать условия победы.
-                    </li>
+                    {% for item in data_from_db.gameinfo.list_features %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
                   </ul>
                 </div>
               </div>
@@ -173,7 +143,7 @@
                   Чтобы купить ключ Millennia для PC, вам понадобится всего
                   несколько минут. После оплаты вы получите на e-mail
                   <br />
-                  лицензионный ключ для системы Steam. Сразу после его активации
+                  лицензионный ключ для системы {{data_from_db.gameinfo.system}}. Сразу после его активации
                   игра автоматически скачается и установится на ваш компьютер.
                 </p>
               </div>

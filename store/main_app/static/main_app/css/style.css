@@ -1550,8 +1550,16 @@ ol {
   height: 500px;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #878787;
-  /* /* background-position: center; */
+  /*background-position: center;
+  background-size: cover;*/
 }
+
+.attachment-file_ img {
+  background-size: cover;
+  /*background-position: center;
+  background-size: contain;*/
+}
+
 
 .community-top-title {
   margin-bottom: 50px;
