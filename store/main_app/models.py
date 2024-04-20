@@ -6,14 +6,14 @@ from django.utils import timezone
 class Games(models.Model):
     title = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
-    path_to_img = models.CharField(max_length=100, blank=True)
     is_tournament = models.BooleanField(default=False)
     genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT, related_name="cats")
     discount_percent = models.FloatField(default=0.0)
-    path_to_mini_img = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, max_length=100, db_index=True)
     gameinfo = models.ForeignKey(to='GameInfo', on_delete=models.PROTECT, related_name="game")
+    min_system_req = models.ForeignKey(to='MinSystemReq', on_delete=models.PROTECT, null=True, related_name="game")
+    recom_system_req = models.ForeignKey(to='RecSystemReq', on_delete=models.PROTECT, null=True, related_name="game")
 
     def __str__(self):
         return self.title
@@ -91,3 +91,25 @@ class GameInfo(models.Model):
         lst = ["Описание игры", "Особенности игры"]
         lst_settings = [self.description, " "]
         return zip(lst, lst_settings)
+
+
+class MinSystemReq(models.Model):
+    os = models.CharField(max_length=100, blank=True)
+    processor = models.CharField(max_length=150, blank=True)
+    memory = models.CharField(max_length=150, blank=True)
+    graphics = models.CharField(max_length=150, blank=True)
+    storage = models.CharField(max_length=5, blank=True)
+
+    def __str__(self):
+        return self.os
+
+
+class RecSystemReq(models.Model):
+    os = models.CharField(max_length=100, blank=True)
+    processor = models.CharField(max_length=150, blank=True)
+    memory = models.CharField(max_length=150, blank=True)
+    graphics = models.CharField(max_length=150, blank=True)
+    storage = models.CharField(max_length=5, blank=True)
+
+    def __str__(self):
+        return self.os

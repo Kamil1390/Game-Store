@@ -1,11 +1,11 @@
 {% load static %}
 {% for item in data_from_db %}
-{% if item.path_to_mini_img and not item.discount_percent %}
+{% if item.gameinfo.path_to_mini_img and not item.discount_percent %}
 <div class="col-lg-4 col-md-6">
   <div class="recent-game-item">
     <div
       class="rgi-thumb set-bg"
-      data-setbg="{% static item.path_to_img %}"
+      data-setbg="{% static item.gameinfo.path_to_img %}"
     >
       <div class="cata new">{{ item.genre.name }}</div>
     </div>
