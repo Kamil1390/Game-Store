@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponse, HttpRequest
 from django.db import models
-from .models import Games, InfoBuy, Genre, Cover, GameInfo
+from .models import Games, InfoBuy, Genre, Cover, GameInfo, MinSystemReq, RecSystemReq
 
 cover = Cover.objects.get(pk=3)
 
@@ -40,7 +40,12 @@ def info_buy(request: HttpRequest) -> HttpResponse:
 def show_game(request: HttpRequest, game_slug: models.SlugField) -> HttpResponse:
     gameinfo_db = get_object_or_404(GameInfo, game__slug=game_slug)
     games_db = get_object_or_404(Games, slug=game_slug)
-    data = {'gameinfo_db': gameinfo_db, 'games_db': games_db}
+    min_sys_db = get_object_or_404(MinSystemReq, game__slug=game_slug)
+    rec_sys_db = get_object_or_404(RecSystemReq, game__slug=game_slug)
+    data = {
+        'gameinfo_db': gameinfo_db, 'games_db': games_db,
+        'min_sys_db': min_sys_db, 'rec_sys_db': rec_sys_db
+    }
     return render(request, "main_app/game.html", context=data)
 
 

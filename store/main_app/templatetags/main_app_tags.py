@@ -47,5 +47,10 @@ def show_sales(data_from_db):
 
 
 @register.inclusion_tag('main_app/list_description.html')
-def show_description(gameinfo_db):
-    return {'gameinfo_db': gameinfo_db}
+def show_description(data_from_db):
+    return {'gameinfo_db': data_from_db}
+
+
+@register.inclusion_tag('main_app/list_system_req.html')
+def show_system_req(min_system, rec_system):
+    return {'min_sys_db': min_system, 'rec_sys_db': rec_system}

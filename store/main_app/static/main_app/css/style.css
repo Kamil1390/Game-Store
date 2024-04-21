@@ -1429,6 +1429,8 @@ ol {
   border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .community-post-list_ h4 {

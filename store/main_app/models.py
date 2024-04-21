@@ -104,11 +104,9 @@ class MinSystemReq(models.Model):
         return self.os
 
     def list_min_system(self):
-        lst = ["Операционная система", "Процессор", "Процессор", "Видеокарта", "Место на диске"]
+        lst = ["Операционная система", "Процессор", "Оперативная память", "Видеокарта", "Место на диске"]
         lst_settings = [getattr(self, field.name) for field in self._meta.fields]
-        res_lst = zip(lst, lst_settings)
-        res_lst.insert(0, "Минимальные системные требования")
-        return res_lst
+        return zip(lst, lst_settings[1:])
 
 
 class RecSystemReq(models.Model):
@@ -122,8 +120,6 @@ class RecSystemReq(models.Model):
         return self.os
 
     def list_rec_system(self):
-        lst = ["Операционная система", "Процессор", "Процессор", "Видеокарта", "Место на диске"]
+        lst = ["Операционная система", "Процессор", "Оперативная память", "Видеокарта", "Место на диске"]
         lst_settings = [getattr(self, field.name) for field in self._meta.fields]
-        res_lst = zip(lst, lst_settings)
-        res_lst.insert(0, "Рекомендуемые системные требования")
-        return res_lst
+        return zip(lst, lst_settings[1:])
