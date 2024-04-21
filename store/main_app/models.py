@@ -94,22 +94,36 @@ class GameInfo(models.Model):
 
 
 class MinSystemReq(models.Model):
-    os = models.CharField(max_length=100, blank=True)
-    processor = models.CharField(max_length=150, blank=True)
-    memory = models.CharField(max_length=150, blank=True)
-    graphics = models.CharField(max_length=150, blank=True)
-    storage = models.CharField(max_length=5, blank=True)
+    os = models.CharField(max_length=255, blank=True)
+    processor = models.CharField(max_length=255, blank=True)
+    memory = models.CharField(max_length=255, blank=True)
+    graphics = models.CharField(max_length=255, blank=True)
+    storage = models.CharField(max_length=10, blank=True)
 
     def __str__(self):
         return self.os
+
+    def list_min_system(self):
+        lst = ["Операционная система", "Процессор", "Процессор", "Видеокарта", "Место на диске"]
+        lst_settings = [getattr(self, field.name) for field in self._meta.fields]
+        res_lst = zip(lst, lst_settings)
+        res_lst.insert(0, "Минимальные системные требования")
+        return res_lst
 
 
 class RecSystemReq(models.Model):
-    os = models.CharField(max_length=100, blank=True)
-    processor = models.CharField(max_length=150, blank=True)
-    memory = models.CharField(max_length=150, blank=True)
-    graphics = models.CharField(max_length=150, blank=True)
-    storage = models.CharField(max_length=5, blank=True)
+    os = models.CharField(max_length=255, blank=True)
+    processor = models.CharField(max_length=255, blank=True)
+    memory = models.CharField(max_length=255, blank=True)
+    graphics = models.CharField(max_length=255, blank=True)
+    storage = models.CharField(max_length=10, blank=True)
 
     def __str__(self):
         return self.os
+
+    def list_rec_system(self):
+        lst = ["Операционная система", "Процессор", "Процессор", "Видеокарта", "Место на диске"]
+        lst_settings = [getattr(self, field.name) for field in self._meta.fields]
+        res_lst = zip(lst, lst_settings)
+        res_lst.insert(0, "Рекомендуемые системные требования")
+        return res_lst
