@@ -72,7 +72,7 @@ class GameInfo(models.Model):
     features = models.TextField(blank=True)
 
     def __str__(self):
-        return self.path_to_img
+        return f'{self.pk}'
 
     def list_features(self):
         return self.features.split('\n')

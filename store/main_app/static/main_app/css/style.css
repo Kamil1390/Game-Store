@@ -1422,7 +1422,6 @@ ol {
 }
 
 .community-post-list_ .my-block {
-  /* padding-left: 25px; */
   margin-bottom: 21px;
   overflow: hidden;
   border: 1px solid #878787;
@@ -1431,6 +1430,10 @@ ol {
   background: white;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.community-post-list_ .my-block .community-post p{
+  padding-right: 15px;
 }
 
 .community-post-list_ h4 {
