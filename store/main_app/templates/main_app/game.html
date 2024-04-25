@@ -1,13 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% load main_app_tags %}
 {% block content %}
 
-<!-- Page info section -->
-<!--<section-->
-<!--  class="page-info-section set-bg"-->
-<!--  data-setbg="{% static gameinfo_db.path_to_img %}"-->
-<!--&gt;-->
-<!--</section>-->
-
 <!-- Page section -->
 <section class="page-section community-page set-bg photo-specific">
   <div class="row">
@@ -18,34 +11,7 @@
             <div class="des-block">
               <h4>Купить {{games_db.title}}</h4>
             </div>
-            <div class="my-block">
-              <div class="community-post">
-                <div class="post-content_">
-                  <div class="row">
-                    <div class="attachment-file_">
-                      <img
-                        src="{% static gameinfo_db.path_to_mini_img %}"
-                        alt="load {{gameinfo_db.path_to_img}}"
-                      />
-                    </div>
-                    <div class="col-7">
-                      <div class="sub-block">
-                        <hr />
-                        {% for item1, item2 in gameinfo_db.main_info %}
-                          <div class="container text-center">
-                            <div class="row">
-                              <div class="my-col-small">{{item1}}:</div>
-                              <div class="my-col2-small">{{item2}}</div>
-                            </div>
-                          </div>
-                          <hr />
-                        {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% show_main_info gameinfo_db %}
           </div>
         </div>
         {% show_description gameinfo_db %}
@@ -85,6 +51,10 @@
       </div>
     </div>
     <div class="fixed-block">
+       <div class="buy">
+         <h3>Цена</h3>
+         {% show_buy_text games_db gameinfo_db %}
+       </div>
     </div>
   </div>
 </section>

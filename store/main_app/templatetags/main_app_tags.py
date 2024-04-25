@@ -1,6 +1,6 @@
 from django import template
 import main_app.views as views
-from main_app.models import Genre, GameInfo
+from main_app.models import Genre
 
 register = template.Library()
 
@@ -54,3 +54,13 @@ def show_description(data_from_db):
 @register.inclusion_tag('main_app/list_system_req.html')
 def show_system_req(min_system, rec_system):
     return {'min_sys_db': min_system, 'rec_sys_db': rec_system}
+
+
+@register.inclusion_tag('main_app/list_main_info.html')
+def show_main_info(gameinfo_db):
+    return {'gameinfo_db': gameinfo_db}
+
+
+@register.inclusion_tag('main_app/buy_text.html')
+def show_buy_text(games_db, gameinfo_db):
+    return {'games_db': games_db, 'gameinfo_db': gameinfo_db}

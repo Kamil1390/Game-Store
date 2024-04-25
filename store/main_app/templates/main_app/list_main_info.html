@@ -1,0 +1,29 @@
+{% load static %}
+<div class="my-block">
+  <div class="community-post">
+    <div class="post-content_">
+      <div class="row">
+        <div class="attachment-file_">
+          <img
+            src="{% static gameinfo_db.path_to_mini_img %}"
+            alt="load {{gameinfo_db.path_to_img}}"
+          />
+        </div>
+        <div class="col-7">
+          <div class="sub-block">
+            <hr />
+            {% for item1, item2 in gameinfo_db.main_info %}
+            <div class="container text-center">
+              <div class="row">
+                <div class="my-col-small">{{item1}}:</div>
+                <div class="my-col2-small">{{item2}}</div>
+              </div>
+            </div>
+            <hr />
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

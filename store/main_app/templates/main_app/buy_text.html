@@ -1,0 +1,29 @@
+{% if games_db.discount_percent%}
+<div class="item-buy">
+  <h4 class="review-text_price_old">{{games_db.price}} p.</h4>
+  <h4 class="review-text_price_new">{{games_db.discount_price}} p.</h4>
+</div>
+{% else %}
+<div class="item-buy">
+  <h4 class="review-text_price_new">{{games_db.price}} p.</h4>
+</div>
+{% endif %}
+<a href="#" class="buy-now">Купить сейчас</a>
+<div class="buy-info">
+  <div class="buy-info-text">
+    <p>
+      За покупку будет начислено:
+      <span>{{games_db.discount_points}} рубль</span>
+    </p>
+  </div>
+</div>
+<div class="empty">
+  <div class="buy-info">
+    <div class="buy-info-text">
+      <p>
+        После покупки Вы моментально получите на e-mail лицензионный ключ
+        {{gameinfo_db.system}} для {{games_db.title}} и сможете начать играть!
+      </p>
+    </div>
+  </div>
+</div>

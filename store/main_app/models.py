@@ -23,6 +23,9 @@ class Games(models.Model):
             discount = self.discount_percent / 100 * self.price
             return int(self.price - discount)
 
+    def discount_points(self):
+        return int(3 / 100 * self.price)
+
     def get_absolute_url(self):
         return reverse('game', kwargs={'game_slug': self.slug})
 

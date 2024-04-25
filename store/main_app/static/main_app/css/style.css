@@ -779,6 +779,8 @@ ol {
   text-decoration: line-through;
 }
 
+
+
 .review-item .review-text p {
   margin-bottom: 0;
 }
@@ -1350,16 +1352,102 @@ ol {
 .fixed-block {
   width: 300px;
   height: 500px;
-  background-image: url("../img/icons/ticket_2.png");
+  background-image: url("../img/icons/tick.png");
   background-size: cover;
   background-position: center;
   position: sticky;
+  display: flex;
+  justify-content: center;
   top: 10;
   left: 75%;
   transform: translateX(0%);
   transition: top 1s ease;
 }
 
+.fixed-block h5 {
+  padding-top: 38%;
+  font-weight: bold;
+}
+
+.fixed-block .buy {
+  width: 75%;
+  height: 70%;
+  margin-top: 19%;
+ /*background: red;*/
+}
+
+.buy h3{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+.fixed-block .buy .item-buy{
+  /*height: 40px;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 10px;
+  /*background: green;*/
+}
+
+.item-buy .review-text_price_new {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item-buy .review-text_price_old {
+  font-size: 20px;
+  /*margin-top: 5px;
+  margin-left: 40px;*/
+  color: red;
+  text-decoration: line-through;
+}
+
+.buy a{
+  color: black;
+}
+
+.fixed-block .buy-now {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 45px;
+  font-size: 25px;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+  border-radius: 8%;
+}
+
+.fixed-block .buy .buy-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buy-info .buy-info-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 85%;
+}
+
+.buy-info .buy-info-text p{
+  font-size: 13px;
+  color: black;
+}
+
+.buy-info .buy-info-text span{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .content {
   height: 200px; /* Пример высоты контента для демонстрации прокрутки */
@@ -1367,6 +1455,10 @@ ol {
 
 .community-page .site-pagination {
   padding-top: 60px;
+}
+
+.empty {
+  padding-top: 5px;
 }
 
 .community-warp {
