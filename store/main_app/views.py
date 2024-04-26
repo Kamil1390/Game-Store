@@ -7,7 +7,7 @@ cover = Cover.objects.get(pk=3)
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    hits = Games.objects.order_by('-id')[:3]
+    hits = Games.objects.order_by('-id')[:4]
     tournaments = Games.objects.filter(is_tournament=True)
     sale = Games.objects.filter(discount_percent__gte=15)[:4]
     data = {'hits': hits, 'tournaments': tournaments, 'sale': sale, 'cover': Cover.objects.filter(pk__lte=2)}

@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+
+  "configurations": [
+    {
+      "name": "store",
+
+      "type": "debugpy",
+
+      "request": "launch",
+
+      "stopOnEntry": false,
+
+      "program": "${workspaceRoot}/store/manage.py",
+
+      "args": ["runserver", "--no-color", "--noreload", "4000"],
+
+      "redirectOutput": true
+    }
+  ]
+}

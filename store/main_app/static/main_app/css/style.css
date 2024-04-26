@@ -117,7 +117,7 @@ ol {
 
 .section-title {
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 30px;
 }
 
 .section-title h2 {
@@ -709,10 +709,16 @@ ol {
   background-position: right top;
 }
 
+.review-item {
+ /* border: 2px solid black;*/
+}
+
 .review-item .review-cover {
   position: relative;
   margin-bottom: 4px;
   height: 345px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .review-item .review-cover .score {
