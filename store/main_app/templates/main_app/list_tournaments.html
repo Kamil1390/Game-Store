@@ -1,13 +1,13 @@
 {% load static %}
 {% for item in data_from_db %}
-{% if item.is_tournament %}
+<!--{% if item.is_tournament %}-->
 <div class="col-md-6">
   <div class="tournament-item mb-4 mb-lg-0">
     <div class="ti-notic">Супер хит</div>
     <div class="ti-content">
       <div
         class="ti-thumb set-bg"
-        data-setbg="{% static item.gameinfo.path_to_img %}"
+        data-setbg="{% static item.gameinfo.path_to_mini_img %}"
       ></div>
       <div class="ti-text">
         <h4>{{ item.title }}</h4>
@@ -25,5 +25,5 @@
     </div>
   </div>
 </div>
-{% endif %}
+<!--{% endif %}-->
 {% endfor %}

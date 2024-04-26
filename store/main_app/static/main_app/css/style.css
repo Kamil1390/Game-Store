@@ -1645,18 +1645,20 @@ ol {
   margin-left: 30px;
   width: 350px;
   height: 500px;
+  overflow: hidden;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #878787;
-  /*background-position: center;
-  background-size: cover;*/
+  position: relative;
 }
 
-.attachment-file_ img {
-  background-size: cover;
-  /*background-position: center;
-  background-size: contain;*/
+.community-post-list_ .attachment-file_ img {
+    width: 350px; /* Заполнение ширины родительского блока */
+    height: 500px; /* Заполнение высоты родительского блока */
+    object-fit: cover; /* Позволяет изображению сохранять пропорции и заполнять всю площадь */
+    position: absolute; /* Позиционируем изображение абсолютно внутри блока */
+    top: 0; /* Размещаем изображение в верхнем левом углу */
+    left: 0;
 }
-
 
 .community-top-title {
   margin-bottom: 50px;

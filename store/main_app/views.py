@@ -7,9 +7,10 @@ cover = Cover.objects.get(pk=3)
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    data_from_db = Games.objects.all()
+    hits = Games.objects.order_by('-id')[:3]
+    tournaments = Games.objects.filter(is_tournament=True)
     sale = Games.objects.filter(discount_percent__gte=15)[:4]
-    data = {'data_from_db': data_from_db, 'sale': sale, 'cover': Cover.objects.filter(pk__lte=2)}
+    data = {'hits': hits, 'tournaments': tournaments, 'sale': sale, 'cover': Cover.objects.filter(pk__lte=2)}
     return render(request, "main_app/index.html", context=data)
 
 

@@ -32,13 +32,13 @@ def show_info(data_from_db):
 
 
 @register.inclusion_tag('main_app/list_news.html')
-def show_news(data_from_db):
-    return {'data_from_db': data_from_db}
+def show_news(hits):
+    return {'data_from_db': hits}
 
 
 @register.inclusion_tag('main_app/list_tournaments.html')
-def show_tournaments(data_from_db):
-    return {'data_from_db': data_from_db}
+def show_tournaments(tournaments):
+    return {'data_from_db': tournaments}
 
 
 @register.inclusion_tag('main_app/list_sales.html')
