@@ -11,9 +11,9 @@ class Games(models.Model):
     discount_percent = models.FloatField(default=0.0)
     description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, max_length=100, db_index=True)
-    gameinfo = models.ForeignKey(to='GameInfo', on_delete=models.PROTECT, related_name="game")
-    min_system_req = models.ForeignKey(to='MinSystemReq', on_delete=models.PROTECT, null=True, related_name="game")
-    recom_system_req = models.ForeignKey(to='RecSystemReq', on_delete=models.PROTECT, null=True, related_name="game")
+    gameinfo = models.OneToOneField(to='GameInfo', on_delete=models.SET_NULL, blank=True, null=True, related_name="game")
+    min_system_req = models.OneToOneField(to='MinSystemReq', on_delete=models.SET_NULL, blank=True, null=True, related_name="game")
+    recom_system_req = models.OneToOneField(to='RecSystemReq', on_delete=models.SET_NULL, blank=True, null=True, related_name="game")
 
     def __str__(self):
         return self.title
@@ -86,8 +86,7 @@ class GameInfo(models.Model):
             "Локализация", "Система активации", "Возрастной рейтинг",
         ]
         lst_settings = [getattr(self, field.name) for field in self._meta.fields]
-        gnr = self.game.get(pk=lst_settings[0])
-        lst_settings.insert(6, gnr.genre.analog_name)
+        lst_settings.insert(6, self.game.genre.analog_name)
         return zip(lst, lst_settings[3:])
 
     def list_description(self):
