@@ -92,7 +92,7 @@ class GameInfo(models.Model):
 
     def list_description(self):
         lst = ["Описание игры", "Особенности игры"]
-        lst_settings = [self.description, " "]
+        lst_settings = [self.description, self.features.split('\n')]
         return zip(lst, lst_settings)
 
 

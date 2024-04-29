@@ -9,7 +9,7 @@
     </div>
     <div class="review-text">
       <div>
-        <a href="{% url 'game' item.slug %}">{{ item.title }}</a>
+        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
       </div>
     </div>
   </div>
