@@ -9,7 +9,6 @@ class Games(models.Model):
     is_tournament = models.BooleanField(default=False)
     genre = models.ForeignKey(to='Genre', on_delete=models.PROTECT, related_name="cats")
     discount_percent = models.FloatField(default=0.0)
-    description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, max_length=100, db_index=True)
     gameinfo = models.OneToOneField(to='GameInfo', on_delete=models.SET_NULL, blank=True, null=True, related_name="game")
     min_system_req = models.OneToOneField(to='MinSystemReq', on_delete=models.SET_NULL, blank=True, null=True, related_name="game")
